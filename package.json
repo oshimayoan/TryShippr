@@ -15,7 +15,7 @@
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "shippr": "node node_modules/shippr/bin/shippr",
-    "test": "node node_modules/jest/bin/jest.js --watch"
+    "test": "node node_modules/jest/bin/jest.js"
   },
   "jest": {
     "preset": "jest-expo"
