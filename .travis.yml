@@ -15,10 +15,4 @@ env:
 script:
   - 'yarn test'
 after_success:
-  - 'SHIPPR_EVENT="$TRAVIS_EVENT_TYPE" yarn shippr'
-deploy:
-  provider: script
-  script: 'SHIPPR_EVENT=release yarn shippr'
-  skip_cleanup: true
-  on:
-    branch: master
+  - '[ "$TRAVIS_EVENT_TYPE" = "pull_request" ] && SHIPPR_EVENT="$TRAVIS_EVENT_TYPE" yarn shippr'
