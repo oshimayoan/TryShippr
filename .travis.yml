@@ -10,7 +10,8 @@ env:
   global:
     - SHIPPR_ENV=travis
     - SHIPPR_NOTIFY_SERVICE=github
-    - SHIPPR_APP_SLUG=TryShippr
+    - SHIPPR_APP_SLUG=tryshippr
+    - EXPO_DEBUG=true
 script:
   - 'yarn test'
 after_success:
