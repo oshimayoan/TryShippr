@@ -3,9 +3,10 @@ node_js:
   - "6"
 cache: yarn
 env:
-  - SHIPPR_ENV=travis
-  - SHIPPR_NOTIFY_SERVICE=github
-  - SHIPPR_APP_SLUG=TryShippr
+  global:
+    - SHIPPR_ENV=travis
+    - SHIPPR_NOTIFY_SERVICE=github
+    - SHIPPR_APP_SLUG=TryShippr
 script:
   - 'yarn test'
 after_success:
