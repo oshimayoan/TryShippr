@@ -1,0 +1,16 @@
+language: node_js
+cache: yarn
+env:
+  - SHIPPR_ENV=travis
+  - SHIPPR_NOTIFY_SERVICE=github
+  - SHIPPR_APP_SLUG=TryShippr
+script:
+  - 'yarn test'
+after_success:
+  - 'SHIPPR_EVENT="$TRAVIS_EVENT_TYPE" yarn shippr'
+deploy:
+  provider: script
+  script: 'SHIPPR_EVENT=release yarn shippr'
+  skip_cleanup: true
+  on:
+    branch: master
